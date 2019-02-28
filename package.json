@@ -25,6 +25,8 @@
     "vue-template-compiler": "^2.6.6"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
     "vue": "^2.6.6",
     "vue-hot-reload-api": "^2.3.2"
   },
