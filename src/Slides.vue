@@ -1,5 +1,5 @@
 <template>
-  <div class="slides">
+  <div class="slides" :class="mode">
     <ul v-if="images.length">
       <li v-for="(image, index) in images" :key="image.src" :class="index === active? 'active' : ''">
         <img :src="image.src">
@@ -15,6 +15,7 @@
     data: () => {
       return {
         images: [],
+        mode: process.env.MODE,
         active: 0,
         interval: 10000
       }
@@ -70,6 +71,17 @@
     img {
       object-fit: cover;
       vertical-align: middle;
+    }
+    &.portrait {
+      img {
+        position: absolute;
+        top: 0;
+        left: 100vw;
+        transform: rotate(90deg);
+        transform-origin: top left;
+        width: 100vh;
+        height: 100vw;
+      }
     }
   }
 </style>
